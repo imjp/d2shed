@@ -1,0 +1,9 @@
+<ul id="account_name_list">
+	<% @user.accounts.each do |account| %>
+		<li>
+			Account:
+			<span class="account_name"><%= account.account_name %></span>
+			<span class="realm">(<%= account.realm %>)</span>
+		</li>
+	<% end %>
+</ul>
