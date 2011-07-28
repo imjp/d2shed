@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 	validates_presence_of :username, :email
 	validates_presence_of :password, :on => :create
 	validates_uniqueness_of :username, :email
+	validates_format_of :username, :with => /^[A-Za-z\d_]+$/
+	validates_length_of :password, :minimum => 8
 	
 	has_friendly_id :username, :use_slug => true, :approximate_ascii => true,
 					:reserved_words => ['new', 'register', 'login', 'logout']
