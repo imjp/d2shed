@@ -1,0 +1,22 @@
+<%= form_for([@account, @account.characters.build]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.radio_button(:type, "SC") %>
+		<%= f.label(:type, "SC") %>
+		
+		<%= f.radio_button(:type, "HC") %>
+		<%= f.label(:type, "HC") %>
+		
+		<%= f.radio_button(:type, "SCL") %>
+		<%= f.label(:type, "SCL") %>
+		
+		<%= f.radio_button(:type, "HCL") %>
+		<%= f.label(:type, "HCL") %>
+  </div> 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
