@@ -1,4 +1,4 @@
-<%= form_for([@account, @account.characters.build]) do |f| %>
+<%= form_for([@user, @account, @user.account.characters.build]) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -16,6 +16,8 @@
 		<%= f.radio_button(:type, "HCL") %>
 		<%= f.label(:type, "HCL") %>
   </div> 
+	 
+	
   <div class="actions">
     <%= f.submit %>
   </div>

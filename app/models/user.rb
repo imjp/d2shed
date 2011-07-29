@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 	
 	attr_accessible :username, :email, :password
 	
-	has_many :accounts
-	has_many :characters, :through => :accounts
+	has_many :accounts, :dependent => :destroy
+	has_many :characters, :through => :accounts, :dependent => :destroy
 	
 	validates :username, :length => { :in => 4..20 }
 	validates_format_of :email, :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/

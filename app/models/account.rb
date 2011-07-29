@@ -2,8 +2,8 @@ class Account < ActiveRecord::Base
 	attr_accessible :account_name, :realm
 	
   belongs_to :user
-	has_many :characters
-		
+	has_many :characters, :dependent => :destroy 
+	
 	validates :account_name, :presence => 'true',
 						:length => { :in => 4..20 },
 						:uniqueness => 'true'

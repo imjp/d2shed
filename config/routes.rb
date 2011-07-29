@@ -1,5 +1,5 @@
 D2shed::Application.routes.draw do	 
-  get 'password_resets/new' 
+  get 'password_resets/new'  
 	
 	get 'register' => 'users#new', :as => 'register'
 	get 'login' => 'sessions#new', :as => 'login'

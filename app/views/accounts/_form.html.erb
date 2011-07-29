@@ -5,17 +5,27 @@
   </div>
   <div class="field">
     <%= f.radio_button(:realm, "USWest") %>
-		<%= f.label(:gender, "USWest") %>
+		<%= f.label(:realm, "USWest") %>
 		
 		<%= f.radio_button(:realm, "USEast") %>
-		<%= f.label(:gender, "USEast") %>
+		<%= f.label(:realm, "USEast") %>
 		
 		<%= f.radio_button(:realm, "Europe") %>
-		<%= f.label(:gender, "Europe") %>
+		<%= f.label(:realm, "Europe") %>
 		
 		<%= f.radio_button(:realm, "Asia") %>
-		<%= f.label(:gender, "Asia") %>
-  </div> 
+		<%= f.label(:realm, "Asia") %>
+  </div>  	
+	
+	<% for character in @account.characters %>
+		<% fields_for "..", character do |character_form| %>
+		
+			<p>
+				Name: <%= character_form.text_field :name %>
+			</p> 
+		<% end %>		
+	<% end %>
+	
   <div class="actions">
     <%= f.submit %>
   </div>
