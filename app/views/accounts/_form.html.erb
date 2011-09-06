@@ -1,0 +1,32 @@
+<%= form_for([@user, @user.accounts.build]) do |f| %>
+  <div class="field">
+    <%= f.label :account_name %><br />
+    <%= f.text_field :account_name %>
+  </div>
+  <div class="field">
+    <%= f.radio_button(:realm, "USWest") %>
+		<%= f.label(:realm, "USWest") %>
+		
+		<%= f.radio_button(:realm, "USEast") %>
+		<%= f.label(:realm, "USEast") %>
+		
+		<%= f.radio_button(:realm, "Europe") %>
+		<%= f.label(:realm, "Europe") %>
+		
+		<%= f.radio_button(:realm, "Asia") %>
+		<%= f.label(:realm, "Asia") %>
+  </div>  	
+	
+	<% for character in @account.characters %>
+		<% fields_for "..", character do |character_form| %>
+		
+			<p>
+				Name: <%= character_form.text_field :name %>
+			</p> 
+		<% end %>		
+	<% end %>
+	
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<%= stylesheet_link_tag "application" %>  
+		<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js", "application" %> 
+		<%= csrf_meta_tags %> 
+	</head>
+	<body>
+		<header> 	
+			<div class="logo">
+				<h1><a href="<%= root_url %>"><span class="red">D2</span>shed</a></h1>
+			</div> 
+			
+			
+			<nav>
+				<% if current_user %>
+					<%= link_to current_user.username, edit_user_path(current_user) %> | 
+					<%= link_to "Log out", logout_path %>
+				<% else %>
+					<%= link_to "Register", register_path %> | 
+					<%= link_to "Login", login_path %>			
+				<% end %>
+			</nav>
+		</header> 
+		
+		
+		<section id="container"> 
+			<%- flash.each do |k, v| %>
+				<div id="<%= k %>"><%= v %></div>
+			<% end %> 
+			<%= yield %>
+		</section>
+		
+		<footer> 
+		</footer>
+	</body>
+</html> 

@@ -1,0 +1,9 @@
+<ul id="account_name_list">
+	<% @user.accounts.each do |account| %>
+		<li>
+			<big><span class="account_name"><%= account.account_name %></span></big>
+			<span class="realm">(<%= account.realm %>)</span>
+			- <%= link_to "delete", [account.user, account], confirm: "Are you sure?", method: :delete, :id => "delete_account", :class => "red" %>
+		</li>
+	<% end %>
+</ul>

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @user.username %><span>'s accounts</span></h2>
+
+<%= render "accounts/accounts" %>
+<%= render "accounts/form" %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
