@@ -41,7 +41,7 @@ group :production do
 <<<<<<< HEAD
   #gem 'therubyracer-heroku', '0.8.1.pre3'
 =======
-  # gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'therubyracer-heroku', '0.8.1.pre3'
 >>>>>>> a46b443bef91a60c17a19dbd77cec95c540f65a2
   gem 'pg'
 end
